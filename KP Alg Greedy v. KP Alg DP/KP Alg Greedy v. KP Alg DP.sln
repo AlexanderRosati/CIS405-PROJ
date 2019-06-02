@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP Alg Greedy v. KP Alg DP", "KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP.csproj", "{FA96C66E-BBAB-4ABC-B354-3217FA507AE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Test For Dynamic Programming Alg", "Unit Test For Dynamic Programming Alg\Unit Test For Dynamic Programming Alg.csproj", "{27B28E72-66DA-47C0-8BB8-DEC6CC3FF5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA96C66E-BBAB-4ABC-B354-3217FA507AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA96C66E-BBAB-4ABC-B354-3217FA507AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA96C66E-BBAB-4ABC-B354-3217FA507AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA96C66E-BBAB-4ABC-B354-3217FA507AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B28E72-66DA-47C0-8BB8-DEC6CC3FF5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B28E72-66DA-47C0-8BB8-DEC6CC3FF5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B28E72-66DA-47C0-8BB8-DEC6CC3FF5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B28E72-66DA-47C0-8BB8-DEC6CC3FF5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {34CB0583-915D-44C4-B7A4-07526BBE8D40}
+	EndGlobalSection
+EndGlobal

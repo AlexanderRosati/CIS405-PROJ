@@ -1,0 +1,11 @@
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.deps.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.runtimeconfig.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.runtimeconfig.dev.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\obj\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.csprojResolveAssemblyReference.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\obj\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.csproj.CoreCompileInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\obj\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.AssemblyInfoInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\obj\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.AssemblyInfo.cs
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\obj\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KP Alg Greedy v. KP Alg DP\obj\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.pdb
