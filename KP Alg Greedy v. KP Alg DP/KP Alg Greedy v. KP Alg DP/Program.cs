@@ -147,7 +147,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         {
             string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
                          "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_1.txt";
-            ItemPicker.PickItems(dir, 10);
+            
         }
     }
 }
