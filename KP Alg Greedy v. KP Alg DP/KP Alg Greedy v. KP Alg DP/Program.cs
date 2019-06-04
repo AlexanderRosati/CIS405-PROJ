@@ -32,6 +32,50 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         }
     }
 
+    //Description: For testing purposes only. Serves no other purpose.
+    public static class TestingClass
+    {
+        static string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
+                         "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_5.txt";
+
+        public static void TestDPAlg()
+        {
+            int[] V = null;
+            int[] W = null;
+            Tuple<int[], int[]> T1 = null;
+            Tuple<int[], int> T2 = null;
+            
+
+            for (int i = 0; i < 1000; ++i)
+            {
+                T1 = ItemPicker.PickItems(dir, 500);
+                W = T1.Item1;
+                V = T1.Item2;
+                T2 = KPDynamicProgAlg.Solve(V, W, 5000, 500);
+                Console.Write($"Maximum Value: {T2.Item2}");
+                Console.WriteLine();
+            }
+
+            Console.ReadLine();
+        }
+
+        public static void TestItemPicker()
+        {
+            while(true)
+            {
+                var tuple = ItemPicker.PickItems(dir, 10);
+                Console.Write("W: ");
+                for (int i = 0; i < 10; i++) Console.Write($" {tuple.Item1[i]}");
+                Console.WriteLine();
+                Console.Write("V: ");
+                for (int i = 0; i < 10; i++) Console.Write($" {tuple.Item2[i]}");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.ReadLine();
+            }
+        }
+    }
+
     //Description: Randomly selected the given number of items from the given file.
     public static class ItemPicker
     {
@@ -84,6 +128,8 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         //Output: Items included in Knapsack and Maximum Value. A value of 1 means the item
         //was included and a value of 0 means it was not included.
         //Post-condition: The optimal value will be returned.
+        //Pre-condition: V and W must have the same number of elements. N must equal the number of
+        //elements in V and W. Capacity must be nonnegative. V and W must contain positive integers.
         public static Tuple<int[], int> Solve(int[] V, int[] W, int Cap, int N)
         {
             //Initialize arrays
@@ -125,7 +171,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             //Look at table to determine which items where included
             for (int j = N; j > 0; j--)
             {
-                if (Table[currW, j - 1] > Table[currW - W[j - 1], j - 1] + V[j - 1])
+                if ((currW - W[j - 1] < 0) || (Table[currW, j - 1] > Table[currW - W[j - 1], j - 1] + V[j - 1]))
                 {
                     ItemsIncluded[j - 1] = 0;
                 }
@@ -147,7 +193,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         {
             string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
                          "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_1.txt";
-            
+            TestingClass.TestDPAlg();
         }
     }
 }

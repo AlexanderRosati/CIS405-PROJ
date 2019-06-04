@@ -1,0 +1,16 @@
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.deps.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.runtimeconfig.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.runtimeconfig.dev.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\bin\Debug\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\obj\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.csprojResolveAssemblyReference.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\obj\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.csproj.CoreCompileInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\obj\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.AssemblyInfoInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\obj\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.AssemblyInfo.cs
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\obj\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Unit Test For Dynamic Programming Alg\obj\Debug\netcoreapp2.0\Unit Test For Dynamic Programming Alg.pdb
