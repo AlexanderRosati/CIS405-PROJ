@@ -32,6 +32,129 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         }
     }
 
+    public static class KPGreedyAlg
+    {
+        //Description: Represents an item. Only useful in this class. itemIndex points to V and W.
+        private class Item
+        {
+            public double ratio; //Item Value / Item Weight
+            public int itemIndex; //Points to object in original arrays
+            public Item(double r, int i) { ratio = r; itemIndex = i; }
+        }
+
+        //Description: Merges two sorted item arrays into one sorted item array.
+        //Helper method for SortItems().
+        private static void Merge(Item[] items, Item[] sub1, Item[] sub2)
+        {
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while (i < sub1.Length && j < sub2.Length)
+            {
+                if (sub1[i].ratio > sub2[j].ratio)
+                {
+                    items[k] = sub1[i];
+                    ++i;
+                }
+
+                else
+                {
+                    items[k] = sub2[j];
+                    ++j;
+                }
+
+                ++k;
+            }
+
+            while (i < sub1.Length)
+            {
+                items[k] = sub1[i];
+                ++i;
+                ++k;
+            }
+
+            while(j < sub2.Length)
+            {
+                items[k] = sub2[j];
+                ++j;
+                ++k;
+            }
+        }
+
+        //Description: Sorts array of items. Variation of merge sort.
+        private static void SortItems(Item[] items)
+        {
+            if (items.Length > 1)
+            {
+                //Split array into two arrays
+                int m = items.Length / 2;
+                Item[] sub1 = new Item[items.Length - m];
+                Item[] sub2 = new Item[m];
+
+                //Copy over values
+                for(int i = 0; i < m; ++i)
+                {
+                    sub2[i] = items[i];
+                }
+
+                for(int i = m; i < items.Length; ++i)
+                {
+                    sub1[i - m] = items[i];
+                }
+
+                SortItems(sub1);
+                SortItems(sub2);
+
+                Merge(items, sub1, sub2);
+            }
+        }
+
+        //Description: Approximates solution to KP using a greedy approach.
+        //Input: V, values of items, W, weights of items, Cap, capacity of knapsack, N, # of items
+        //Output: An array that tells you which items where put into the knapsack and the value of
+        //the items in the knapsack.
+        //Pre-condition: V and W must have the same number of elements. N must equal the number of
+        //elements in V and W. Capacity must be nonnegative. V and W must contain positive integers.
+        public static Tuple<int[], int> Solve(int[] V, int[] W, int Cap, int N)
+        {
+            int remainingCapacity = Cap; //How much space is left in knapsack
+            int valueInKnapsack = 0; //Current value in knapsack
+
+            Item[] items = new Item[N];
+            int[] itemsInKnapsack = new int[N]; //Tells you which items the alg put in knapsack
+
+            //Create N Item Objects
+            for(int i = 0; i < N; ++i)
+            {
+                items[i] = new Item(Convert.ToDouble(V[i]) / W[i], i);
+            }
+
+            //Sort items by ratio = value of item / weight of item
+            SortItems(items);
+
+            //Iterate through all items
+            for (int i = 0; i < N; ++i)
+            {
+                //If item fits in knapsack
+                if (W[items[i].itemIndex] < remainingCapacity)
+                {
+                    remainingCapacity -= W[items[i].itemIndex];
+                    valueInKnapsack += V[items[i].itemIndex];
+                    itemsInKnapsack[items[i].itemIndex] = 1;
+                }
+
+                //If items doesn't fit in knapsack
+                else
+                {
+                    itemsInKnapsack[items[i].itemIndex] = 0;
+                }
+            }
+
+            return new Tuple<int[], int>(itemsInKnapsack, valueInKnapsack);
+        }
+    }
+
     //Description: For testing purposes only. Serves no other purpose.
     public static class TestingClass
     {
@@ -193,7 +316,22 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         {
             string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
                          "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_1.txt";
-            TestingClass.TestDPAlg();
+
+            Tuple<int[], int[]> t1;
+            Tuple<int[], int> t2;
+            Tuple<int[], int> t3;
+            int runningTotal = 0;
+
+            for (int i = 0; i < 100000; ++i)
+            {
+                t1 = ItemPicker.PickItems(dir, 10);
+                t2 = KPGreedyAlg.Solve(t1.Item1, t1.Item2, 100, 10);
+                t3 = KPDynamicProgAlg.Solve(t1.Item1, t1.Item2, 100, 10);
+                runningTotal += (t3.Item2 - t2.Item2);
+            }
+
+            Console.WriteLine(runningTotal / 100_000.0);
+            Console.ReadLine();
         }
     }
 }

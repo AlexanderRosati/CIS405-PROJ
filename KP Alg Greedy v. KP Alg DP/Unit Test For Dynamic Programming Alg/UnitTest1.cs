@@ -6,20 +6,16 @@ using System.Collections.Generic;
 namespace Unit_Test_For_Dynamic_Programming_Alg
 {
     [TestClass]
-    public class UnitTest1
+    public class DynamicProgrammingTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethodDynamicProgramming()
         {
             //Note: Used this website to help with testing: 
             //http://karaffeltut.com/NEWKaraffeltutCom/Knapsack/knapsack.html
 
-            //Arrange
-            List<int[]> valueArrays = new List<int[]>();
-            List<int[]> weightArrays = new List<int[]>();
-
             //Act
-            //Note: KPDynamicProgAlg.Solve() is returning Tuple<int[], int.
+            //Note: KPDynamicProgAlg.Solve() is returning Tuple<int[], int>.
             var t1 = KPDynamicProgAlg.Solve(new int[0], new int[0], 0, 0);
             var t2 = KPDynamicProgAlg.Solve(new int[2] { 2, 3 }, new int[2] { 3, 4 }, 0, 2);
             var t3 = KPDynamicProgAlg.Solve(new int[0], new int[0], 3, 0);
