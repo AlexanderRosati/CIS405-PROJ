@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 
 namespace KP_Alg_Greedy_v._KP_Alg_DP
 {
@@ -258,30 +259,103 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
 
     class Program
     {
+        //Note: This code was written to generate the data I wanted. You need to modify it
+        //if you want to run it yourself.
         static void Main(string[] args)
         {
-            string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
-                         "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_5.txt";
-
-            List<string> linesOfFile = new List<string>(File.ReadAllLines(dir));
-            Tuple<int[], int[]>[] Problems = new Tuple<int[], int[]>[100_000];
-
-            for (int i = 0; i < 100_000; ++i)
-            {
-                Problems[i] = ItemPicker.PickItems(linesOfFile, 500);
-            }
-
-            Console.WriteLine("Problems generated.");
-
+            //Vars
+            string dirOfFileToPullItemsFrom = null;
+            string fileToPullItemsFrom = null;
+            string csv1 = null;
+            string csv2 = null;
+            int numberOfProblems = 0;
+            int numberOfItems = 0;
+            int capacity = 0;
+            int sleepCounter = 0;
+            long timeForGreedySolvingProblems = 0;
+            long timeForDPSolvingProblems = 0;
+            Tuple<int[], int[]>[] Problems = null;
             Stopwatch sw = new Stopwatch();
-            sw.Start();
-            for (int i = 0; i < 100_000; ++i)
-            {
-                KPDynamicProgAlg.Solve(Problems[i].Item2, Problems[i].Item1, 5000, 500);
-            }
-            sw.Stop();
 
-            Console.WriteLine(sw.ElapsedMilliseconds);
+            //Prompt user for various things.
+            Console.Write("File to pull items from: ");
+            fileToPullItemsFrom = Console.ReadLine();
+            dirOfFileToPullItemsFrom = "C:\\Users\\Fuck You Microsoft\\Documents\\" +
+                                              "GitHub\\CIS405-PROJ\\KP Alg Greedy v. KP Alg DP\\" +
+                                              "KP Alg Greedy v. KP Alg DP\\" + fileToPullItemsFrom;
+
+            Console.Write("Name of first output file: ");
+            csv1 = Console.ReadLine();
+
+            Console.Write("Name of second output file: ");
+            csv2 = Console.ReadLine();
+
+            Console.Write("Number of problems to solve: ");
+            numberOfProblems = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Number of items: ");
+            numberOfItems = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Capacity: ");
+            capacity = Convert.ToInt32(Console.ReadLine());
+
+            //Create array for problems
+            Problems = new Tuple<int[], int[]>[numberOfProblems];
+
+            //Turn file into list
+            List<string> linesOfFile = new List<string>(File.ReadAllLines(dirOfFileToPullItemsFrom));
+
+            Console.WriteLine("Generating problems.");
+
+            //Generate Problems
+            for(int i = 0; i < numberOfProblems; ++i)
+            {
+                if (sleepCounter == 1000)
+                {
+                    sleepCounter = 0;
+                    --i;
+                    Console.WriteLine($"{i + 1} problems generated.");
+                    Thread.Sleep(1000); //Im pauing here to try and make the item selection more random.
+                }
+                
+                else
+                {
+                    Problems[i] = ItemPicker.PickItems(linesOfFile, numberOfItems);
+                    ++sleepCounter;
+                }
+            }
+
+            Console.WriteLine("Done generating problems.");
+            Console.WriteLine("Greedy is solving.");
+
+            //Timing the greedy algorithm solving all the problems.
+            for (int i = 0; i < numberOfProblems; ++i)
+            {
+                sw.Start();
+                KPGreedyAlg.Solve(Problems[i].Item2, Problems[i].Item1, capacity, numberOfItems);
+                sw.Stop();
+            }
+            
+
+            timeForGreedySolvingProblems = sw.ElapsedMilliseconds;
+
+            Console.WriteLine($"Greedy is done solving. Took {timeForGreedySolvingProblems}ms.");
+            Console.WriteLine("Dynamic Programming is solving.");
+
+            sw.Reset();
+
+            //Timing dynamic programming solving all the problems.
+            for (int i = 0; i < numberOfProblems; ++i)
+            {
+                sw.Start();
+                KPDynamicProgAlg.Solve(Problems[i].Item2, Problems[i].Item1, capacity, numberOfItems);
+                sw.Stop();
+            }
+
+            timeForDPSolvingProblems = sw.ElapsedMilliseconds;
+            Console.WriteLine($"Dynamic Programming is done solving. Took {timeForDPSolvingProblems}ms.");
+
+            Console.Write("Press enter to coninue . . .");
             Console.ReadLine();
         }
     }
