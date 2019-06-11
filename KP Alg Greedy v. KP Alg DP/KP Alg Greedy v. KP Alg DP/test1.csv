@@ -1,0 +1,8 @@
+Statistic,Value
+"Average Runtime of the Greedy Algorithm",0.004
+"Average Runtime of the DP Algorithm",0.018
+"Total time for Greedy",4
+"Total time for DP",18
+"Capacity",100
+"Number of Problems",1000
+"Number of Items",10

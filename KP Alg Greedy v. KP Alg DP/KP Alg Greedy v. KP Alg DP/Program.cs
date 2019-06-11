@@ -266,15 +266,31 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             //Vars
             string dirOfFileToPullItemsFrom = null;
             string fileToPullItemsFrom = null;
+            string csv1Name = null;
+            string csv2Name = null;
             string csv1 = null;
             string csv2 = null;
+            string values = "";
+            string weights = "";
+            string itemsThatGreedyIncluded = "";
+            string itemsThatDPIncluded = "";
+            string record = null;
+
+            int valueForGreedy = 0;
+            int valueForDP = 0;
+            int errorOfGreedy = 0;
             int numberOfProblems = 0;
             int numberOfItems = 0;
             int capacity = 0;
             int sleepCounter = 0;
+
             long timeForGreedySolvingProblems = 0;
             long timeForDPSolvingProblems = 0;
+
             Tuple<int[], int[]>[] Problems = null;
+            Tuple<int[], int>[] GreedySolutions = null;
+            Tuple<int[], int>[] DynamicProgSolutions = null;
+
             Stopwatch sw = new Stopwatch();
 
             //Prompt user for various things.
@@ -285,13 +301,15 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
                                               "KP Alg Greedy v. KP Alg DP\\" + fileToPullItemsFrom;
 
             Console.Write("Name of first output file: ");
-            csv1 = Console.ReadLine();
+            csv1Name = Console.ReadLine();
 
             Console.Write("Name of second output file: ");
-            csv2 = Console.ReadLine();
+            csv2Name = Console.ReadLine();
 
             Console.Write("Number of problems to solve: ");
             numberOfProblems = Convert.ToInt32(Console.ReadLine());
+            GreedySolutions = new Tuple<int[], int>[numberOfProblems];
+            DynamicProgSolutions = new Tuple<int[], int>[numberOfProblems];
 
             Console.Write("Number of items: ");
             numberOfItems = Convert.ToInt32(Console.ReadLine());
@@ -329,13 +347,12 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             Console.WriteLine("Greedy is solving.");
 
             //Timing the greedy algorithm solving all the problems.
+            sw.Start();
             for (int i = 0; i < numberOfProblems; ++i)
-            {
-                sw.Start();
-                KPGreedyAlg.Solve(Problems[i].Item2, Problems[i].Item1, capacity, numberOfItems);
-                sw.Stop();
+            {              
+                GreedySolutions[i] = KPGreedyAlg.Solve(Problems[i].Item2, Problems[i].Item1, capacity, numberOfItems);
             }
-            
+            sw.Stop();
 
             timeForGreedySolvingProblems = sw.ElapsedMilliseconds;
 
@@ -345,16 +362,91 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             sw.Reset();
 
             //Timing dynamic programming solving all the problems.
+            sw.Start();
             for (int i = 0; i < numberOfProblems; ++i)
             {
-                sw.Start();
-                KPDynamicProgAlg.Solve(Problems[i].Item2, Problems[i].Item1, capacity, numberOfItems);
-                sw.Stop();
+                DynamicProgSolutions[i] = KPDynamicProgAlg.Solve(Problems[i].Item2, Problems[i].Item1, capacity, numberOfItems);
             }
+            sw.Stop();
 
             timeForDPSolvingProblems = sw.ElapsedMilliseconds;
             Console.WriteLine($"Dynamic Programming is done solving. Took {timeForDPSolvingProblems}ms.");
+            Console.WriteLine("Creating first CSV.");
 
+            //Generating first CSV
+            csv1 = "Statistic,Value\n";
+            csv1 += $"\"Average Runtime of the Greedy Algorithm\",{timeForGreedySolvingProblems / Convert.ToDouble(numberOfProblems)}\n";
+            csv1 += $"\"Average Runtime of the DP Algorithm\",{timeForDPSolvingProblems / Convert.ToDouble(numberOfProblems)}\n";
+            csv1 += $"\"Total time for Greedy\",{timeForGreedySolvingProblems}\n";
+            csv1 += $"\"Total time for DP\",{timeForDPSolvingProblems}\n";
+            csv1 += $"\"Capacity\",{capacity}\n";
+            csv1 += $"\"Number of Problems\",{numberOfProblems}\n";
+            csv1 += $"\"Number of Items\",{numberOfItems}\n";
+
+            string tmpString = "C:\\Users\\Fuck You Microsoft\\Documents\\" +
+                                              "GitHub\\CIS405-PROJ\\KP Alg Greedy v. KP Alg DP\\" +
+                                              "KP Alg Greedy v. KP Alg DP\\" + csv1Name;
+            File.WriteAllText(tmpString, csv1);
+            Console.WriteLine("Done creating first CSV.");
+            Console.WriteLine("Creating second CSV.");
+
+            //Generating second CSV
+            csv2 = "Values,Weights,Number of Items, Capacity,Value that Greedy Put in Bag," +
+                   "Value that DP Put in Bag,Greedy Solution,DP Solution,Error of Greedy\n";
+
+            for (int i = 0; i < numberOfProblems; ++i)
+            {
+                //Set various things to empty string
+                record = "";
+                values = "";
+                weights = "";
+                itemsThatDPIncluded = "";
+                itemsThatGreedyIncluded = "";
+
+                //Turn value array into string
+                for (int j = 0; j < numberOfItems - 1; ++j) values += $"{Problems[i].Item2[j]},";
+                values += $"{Problems[i].Item2[numberOfItems - 1]}";
+
+                //Turn weight array into string
+                for (int j = 0; j < numberOfItems - 1; ++j) weights += $"{Problems[i].Item1[j]},";
+                weights += $"{Problems[i].Item1[numberOfItems - 1]}";
+
+                //Turning greedy solution into a string
+                for (int j = 0; j < numberOfItems; ++j)
+                {
+                    itemsThatGreedyIncluded += $"{GreedySolutions[i].Item1[j]}";
+                }
+
+                //Turning DP solution into a string
+                for (int j = 0; j < numberOfItems; ++j)
+                {
+                    itemsThatDPIncluded += $"{DynamicProgSolutions[i].Item1[j]}";
+                }
+
+                //Calculate error of Greedy
+                errorOfGreedy = DynamicProgSolutions[i].Item2 - GreedySolutions[i].Item2;
+
+                //Create record
+                record += $"\"{values}\",";
+                record += $"\"{weights}\",";
+                record += $"{numberOfItems},";
+                record += $"{capacity},";
+                record += $"{GreedySolutions[i].Item2},";
+                record += $"{DynamicProgSolutions[i].Item2},";
+                record += $"\"{itemsThatGreedyIncluded}\",";
+                record += $"\"{itemsThatDPIncluded}\",";
+                record += $"{errorOfGreedy}\n";
+
+                //Add record to file
+                csv2 += record;
+            }
+
+            tmpString = "C:\\Users\\Fuck You Microsoft\\Documents\\" +
+                                              "GitHub\\CIS405-PROJ\\KP Alg Greedy v. KP Alg DP\\" +
+                                              "KP Alg Greedy v. KP Alg DP\\" + csv2Name;
+            File.WriteAllText(tmpString, csv2);
+
+            Console.WriteLine("Done generating second CSV.");
             Console.Write("Press enter to coninue . . .");
             Console.ReadLine();
         }
