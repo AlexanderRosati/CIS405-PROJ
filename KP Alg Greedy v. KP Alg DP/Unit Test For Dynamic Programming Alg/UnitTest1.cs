@@ -52,6 +52,12 @@ namespace Unit_Test_For_Dynamic_Programming_Alg
             var t15 = KPDynamicProgAlg.Solve(
                                             new int[6] { 1, 2, 3, 6, 3, 4 },
                                             new int[6] { 200, 500, 400, 350, 300, 300 }, 1000, 6);
+            var t16 = KPDynamicProgAlg.Solve(
+                                            new int[10] { 19, 29, 4, 16, 24, 4, 17, 6, 34, 14 },
+                                            new int[10] { 14, 20, 4, 15, 17, 3, 17, 6, 25, 25 }, 100, 10);
+            var t17 = KPDynamicProgAlg.Solve(
+                                            new int[10] { 8, 7, 20, 16, 8, 26, 8, 4, 18, 6 },
+                                            new int[10] { 9, 8, 15, 15, 13, 20, 6, 3, 19, 11 }, 100, 10);
             
             //Assert
             Assert.AreEqual(0, t1.Item2);
@@ -89,6 +95,12 @@ namespace Unit_Test_For_Dynamic_Programming_Alg
 
             Assert.AreEqual(13, t15.Item2);
             CollectionAssert.AreEqual(new int[6] { 0, 0, 0, 1, 1, 1 }, t15.Item1);
+
+            Assert.AreEqual(132, t16.Item2);
+            CollectionAssert.AreEqual(new int[10] { 1, 1, 0, 1, 1, 1, 0, 1, 1, 0 }, t16.Item1);
+
+            Assert.AreEqual(108, t17.Item2);
+            CollectionAssert.AreEqual(new int[10] { 1, 0, 1, 1, 1, 1, 1, 1, 1, 0 }, t17.Item1);
         }
     }
 }

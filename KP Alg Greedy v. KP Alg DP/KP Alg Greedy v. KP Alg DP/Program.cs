@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Diagnostics;
 
 namespace KP_Alg_Greedy_v._KP_Alg_DP
 {
@@ -137,7 +138,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             for (int i = 0; i < N; ++i)
             {
                 //If item fits in knapsack
-                if (W[items[i].itemIndex] < remainingCapacity)
+                if (W[items[i].itemIndex] <= remainingCapacity)
                 {
                     remainingCapacity -= W[items[i].itemIndex];
                     valueInKnapsack += V[items[i].itemIndex];
@@ -155,84 +156,29 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         }
     }
 
-    //Description: For testing purposes only. Serves no other purpose.
-    public static class TestingClass
-    {
-        static string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
-                         "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_5.txt";
-
-        public static void TestDPAlg()
-        {
-            int[] V = null;
-            int[] W = null;
-            Tuple<int[], int[]> T1 = null;
-            Tuple<int[], int> T2 = null;
-            
-
-            for (int i = 0; i < 1000; ++i)
-            {
-                T1 = ItemPicker.PickItems(dir, 500);
-                W = T1.Item1;
-                V = T1.Item2;
-                T2 = KPDynamicProgAlg.Solve(V, W, 5000, 500);
-                Console.Write($"Maximum Value: {T2.Item2}");
-                Console.WriteLine();
-            }
-
-            Console.ReadLine();
-        }
-
-        public static void TestItemPicker()
-        {
-            while(true)
-            {
-                var tuple = ItemPicker.PickItems(dir, 10);
-                Console.Write("W: ");
-                for (int i = 0; i < 10; i++) Console.Write($" {tuple.Item1[i]}");
-                Console.WriteLine();
-                Console.Write("V: ");
-                for (int i = 0; i < 10; i++) Console.Write($" {tuple.Item2[i]}");
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.ReadLine();
-            }
-        }
-    }
-
-    //Description: Randomly selected the given number of items from the given file.
+    //Description: Randomly selectes the given number of items from the given file.
     public static class ItemPicker
     {
-        //Description: Randomly selected the given number of items from the given file.
+        //Description: Randomly selectes the given number of items from the given file.
         //Input: File with items and number of items to select.
         //Output: Subset of items in file.
         //Precondition: File must follow the proper format.
-        public static Tuple<int[], int[]> PickItems(string dirOfItems, int numItems)
+        public static Tuple<int[], int[]> PickItems(List<string> linesOfFile, int numItems)
         {
-            string tmpString = String.Empty;
-            string[] tmpStringArr = null;
+            string line = null;
+            string[] weightAndValue = null;
             int[] weights = new int[numItems];
             int[] values = new int[numItems];
 
             Random RNG = new Random();
-
-            //Turn input file into a list of strings
-            List<string> linesOfFile = new List<string>(File.ReadAllLines(dirOfItems));
             
-            //Shuffle list of strings
-            for (int i = 0; i < linesOfFile.Count; ++i)
-            {
-                int randomIndx = RNG.Next(0, linesOfFile.Count);
-                tmpString = linesOfFile[i];
-                linesOfFile[i] = linesOfFile[randomIndx];
-                linesOfFile[randomIndx] = tmpString;
-            }
-
-            //Use first ten elements in string list as items.
+            //Randomly select the given number of lines from the file.
             for (int i = 0; i < numItems; ++i)
             {
-                tmpStringArr = linesOfFile[i].Split(",");
-                weights[i] = Convert.ToInt16(tmpStringArr[0]);
-                values[i] = Convert.ToInt16(tmpStringArr[1]);
+                line = linesOfFile[RNG.Next(linesOfFile.Count)];
+                weightAndValue = line.Split(",");
+                weights[i] = Convert.ToInt32(weightAndValue[0]);
+                values[i] = Convert.ToInt32(weightAndValue[1]);
             }
 
             return new Tuple<int[], int[]>(weights, values);
@@ -315,22 +261,27 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         static void Main(string[] args)
         {
             string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
-                         "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_1.txt";
+                         "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\PROBLEM_SIZE_5.txt";
 
-            Tuple<int[], int[]> t1;
-            Tuple<int[], int> t2;
-            Tuple<int[], int> t3;
-            int runningTotal = 0;
+            List<string> linesOfFile = new List<string>(File.ReadAllLines(dir));
+            Tuple<int[], int[]>[] Problems = new Tuple<int[], int[]>[100_000];
 
-            for (int i = 0; i < 100000; ++i)
+            for (int i = 0; i < 100_000; ++i)
             {
-                t1 = ItemPicker.PickItems(dir, 10);
-                t2 = KPGreedyAlg.Solve(t1.Item1, t1.Item2, 100, 10);
-                t3 = KPDynamicProgAlg.Solve(t1.Item1, t1.Item2, 100, 10);
-                runningTotal += (t3.Item2 - t2.Item2);
+                Problems[i] = ItemPicker.PickItems(linesOfFile, 500);
             }
 
-            Console.WriteLine(runningTotal / 100_000.0);
+            Console.WriteLine("Problems generated.");
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            for (int i = 0; i < 100_000; ++i)
+            {
+                KPDynamicProgAlg.Solve(Problems[i].Item2, Problems[i].Item1, 5000, 500);
+            }
+            sw.Stop();
+
+            Console.WriteLine(sw.ElapsedMilliseconds);
             Console.ReadLine();
         }
     }
