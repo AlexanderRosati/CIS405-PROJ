@@ -259,12 +259,9 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
 
     class Program
     {
-        //Note: This code was written to generate the data I wanted. You need to modify it
-        //if you want to run it yourself.
         static void Main(string[] args)
         {
             //Vars
-            string dirOfFileToPullItemsFrom = null;
             string fileToPullItemsFrom = null;
             string csv1Name = null;
             string csv2Name = null;
@@ -276,8 +273,6 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             string itemsThatDPIncluded = "";
             string record = null;
 
-            int valueForGreedy = 0;
-            int valueForDP = 0;
             int errorOfGreedy = 0;
             int numberOfProblems = 0;
             int numberOfItems = 0;
@@ -296,9 +291,6 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             //Prompt user for various things.
             Console.Write("File to pull items from: ");
             fileToPullItemsFrom = Console.ReadLine();
-            dirOfFileToPullItemsFrom = "C:\\Users\\Fuck You Microsoft\\Documents\\" +
-                                              "GitHub\\CIS405-PROJ\\KP Alg Greedy v. KP Alg DP\\" +
-                                              "KP Alg Greedy v. KP Alg DP\\" + fileToPullItemsFrom;
 
             Console.Write("Name of first output file: ");
             csv1Name = Console.ReadLine();
@@ -321,7 +313,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             Problems = new Tuple<int[], int[]>[numberOfProblems];
 
             //Turn file into list
-            List<string> linesOfFile = new List<string>(File.ReadAllLines(dirOfFileToPullItemsFrom));
+            List<string> linesOfFile = new List<string>(File.ReadAllLines(fileToPullItemsFrom));
 
             Console.WriteLine("Generating problems.");
 
@@ -383,10 +375,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             csv1 += $"\"Number of Problems\",{numberOfProblems}\n";
             csv1 += $"\"Number of Items\",{numberOfItems}\n";
 
-            string tmpString = "C:\\Users\\Fuck You Microsoft\\Documents\\" +
-                                              "GitHub\\CIS405-PROJ\\KP Alg Greedy v. KP Alg DP\\" +
-                                              "KP Alg Greedy v. KP Alg DP\\" + csv1Name;
-            File.WriteAllText(tmpString, csv1);
+            File.WriteAllText(csv1Name, csv1);
             Console.WriteLine("Done creating first CSV.");
             Console.WriteLine("Creating second CSV.");
 
@@ -439,12 +428,16 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
 
                 //Add record to file
                 csv2 += record;
+
+                //So the user knows how much of the file has been generated
+                if ((i + 1) % 1000 == 0)
+                {
+                    Console.WriteLine($"{i + 1} records have been generated.");
+                }
             }
 
-            tmpString = "C:\\Users\\Fuck You Microsoft\\Documents\\" +
-                                              "GitHub\\CIS405-PROJ\\KP Alg Greedy v. KP Alg DP\\" +
-                                              "KP Alg Greedy v. KP Alg DP\\" + csv2Name;
-            File.WriteAllText(tmpString, csv2);
+            Console.WriteLine("Writing file.");
+            File.WriteAllText(csv2Name, csv2);
 
             Console.WriteLine("Done generating second CSV.");
             Console.Write("Press enter to coninue . . .");
