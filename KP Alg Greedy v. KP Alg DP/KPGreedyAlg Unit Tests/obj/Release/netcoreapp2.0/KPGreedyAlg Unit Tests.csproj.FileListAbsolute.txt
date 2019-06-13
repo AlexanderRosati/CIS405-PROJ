@@ -1,0 +1,16 @@
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.deps.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.runtimeconfig.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.runtimeconfig.dev.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\bin\Release\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\obj\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.csprojResolveAssemblyReference.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\obj\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.csproj.CoreCompileInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\obj\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.AssemblyInfoInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\obj\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.AssemblyInfo.cs
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\obj\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\KPGreedyAlg Unit Tests\obj\Release\netcoreapp2.0\KPGreedyAlg Unit Tests.pdb

@@ -266,7 +266,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             string csv1Name = null;
             string csv2Name = null;
             string csv1 = null;
-            string csv2 = null;
+            string csv2 = "";
             string values = "";
             string weights = "";
             string itemsThatGreedyIncluded = "";
@@ -380,9 +380,6 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             Console.WriteLine("Creating second CSV.");
 
             //Generating second CSV
-            csv2 = "Values,Weights,Number of Items, Capacity,Value that Greedy Put in Bag," +
-                   "Value that DP Put in Bag,Greedy Solution,DP Solution,Error of Greedy\n";
-
             for (int i = 0; i < numberOfProblems; ++i)
             {
                 //Set various things to empty string
@@ -426,8 +423,8 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
                 record += $"\"{itemsThatDPIncluded}\",";
                 record += $"{errorOfGreedy}\n";
 
-                //Add record to file
-                csv2 += record;
+                //Add record to beggining of file
+                csv2 = csv2.Insert(0, record);
 
                 //So the user knows how much of the file has been generated
                 if ((i + 1) % 1000 == 0)
@@ -435,6 +432,10 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
                     Console.WriteLine($"{i + 1} records have been generated.");
                 }
             }
+
+            //Input header at begining of file
+            csv2 = csv2.Insert(0, "Values,Weights,Number of Items, Capacity,Value that Greedy Put in Bag," +
+                   "Value that DP Put in Bag,Greedy Solution,DP Solution,Error of Greedy\n");
 
             Console.WriteLine("Writing file.");
             File.WriteAllText(csv2Name, csv2);
