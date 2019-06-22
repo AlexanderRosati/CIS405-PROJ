@@ -1,0 +1,13 @@
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\Time Plots.deps.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\Time Plots.runtimeconfig.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\Time Plots.runtimeconfig.dev.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\Time Plots.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\Time Plots.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\bin\Release\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\obj\Release\netcoreapp2.0\Time Plots.csprojResolveAssemblyReference.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\obj\Release\netcoreapp2.0\Time Plots.csproj.CoreCompileInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\obj\Release\netcoreapp2.0\Time Plots.AssemblyInfoInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\obj\Release\netcoreapp2.0\Time Plots.AssemblyInfo.cs
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\obj\Release\netcoreapp2.0\Time Plots.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\Time Plots\obj\Release\netcoreapp2.0\Time Plots.pdb

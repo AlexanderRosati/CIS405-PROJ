@@ -118,9 +118,9 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
         //the items in the knapsack.
         //Pre-condition: V and W must have the same number of elements. N must equal the number of
         //elements in V and W. Capacity must be nonnegative. V and W must contain positive integers.
-        public static Tuple<int[], int> Solve(int[] V, int[] W, int Cap, int N)
+        public static Tuple<int[], int> Solve(int[] V, int[] W, long Cap, int N)
         {
-            int remainingCapacity = Cap; //How much space is left in knapsack
+            long remainingCapacity = Cap; //How much space is left in knapsack
             int valueInKnapsack = 0; //Current value in knapsack
 
             Item[] items = new Item[N];
