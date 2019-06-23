@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit Test For Dynamic Progr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KPGreedyAlg Unit Tests", "KPGreedyAlg Unit Tests\KPGreedyAlg Unit Tests.csproj", "{CBF60AEC-6C63-4ED8-B5B5-51B6EB38F4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time Plots", "Time Plots\Time Plots.csproj", "{9A6D6B45-FE90-437C-A6F3-0426A5530AC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Time Plots", "Time Plots\Time Plots.csproj", "{9A6D6B45-FE90-437C-A6F3-0426A5530AC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateFiles", "GenerateFiles\GenerateFiles.csproj", "{3E92A1CD-BF7D-40A1-A4CA-DA2E5A0EB1FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9A6D6B45-FE90-437C-A6F3-0426A5530AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A6D6B45-FE90-437C-A6F3-0426A5530AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A6D6B45-FE90-437C-A6F3-0426A5530AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E92A1CD-BF7D-40A1-A4CA-DA2E5A0EB1FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E92A1CD-BF7D-40A1-A4CA-DA2E5A0EB1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E92A1CD-BF7D-40A1-A4CA-DA2E5A0EB1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E92A1CD-BF7D-40A1-A4CA-DA2E5A0EB1FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

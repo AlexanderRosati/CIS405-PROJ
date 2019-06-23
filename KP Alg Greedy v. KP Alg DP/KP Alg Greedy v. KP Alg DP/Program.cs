@@ -7,7 +7,7 @@ using System.Threading;
 namespace KP_Alg_Greedy_v._KP_Alg_DP
 {
     //Description: Generates a file of random numbers for use in testing.
-    public static class FileGenerator
+    public static class FileGeneratorV1
     {
         //Description: Generates a file with the given number of items. The file is named fileName
         //and is created in the solution folder. The format of the file is weight,value. Each
@@ -28,6 +28,38 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
                 double multiplier = (RNG.Next(1, 101) / 100.0) + 0.5;
                 int v = Convert.ToInt16(Math.Ceiling(multiplier * w));
                 newFileText += $"{w},{v}\n";
+            }
+
+            File.WriteAllText(dir, newFileText);
+        }
+    }
+
+    //Description: Like the class above. However, there is no relationship between value and weight.
+    //Generates a file with numItems items. Each line in file is an item. maxWeight is the maximum weight
+    //that an item can have. maxValue is the maximum value that an item can have. fileName is the name
+    //of the file generated. Directories are hardcoded and only applicable to me.
+    public static class FileGeneratorV2
+    {
+        public static void Generate(int maxWeight, int maxValue, int numItems, string fileName)
+        {
+            string newFileText = String.Empty;
+            Random RNG = new Random();
+            string dir = "C:\\Users\\Fuck You Microsoft\\Documents\\GitHub\\CIS405-PROJ\\" +
+                         "KP Alg Greedy v. KP Alg DP\\KP Alg Greedy v. KP Alg DP\\" + fileName;
+            int w, v;
+
+            //Add a line to string for each item the user wants
+            for (int i = 0; i < numItems; ++i)
+            {
+                w = RNG.Next(1, maxWeight + 1);
+                v = RNG.Next(1, maxValue + 1);
+                newFileText += $"{w},{v}\n";
+
+                //Every 1000 lines, pause for a sec to make numbers more random
+                if (((i + 1) % 1000) == 0)
+                {
+                    Thread.Sleep(1000);
+                }
             }
 
             File.WriteAllText(dir, newFileText);
@@ -379,6 +411,10 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
             Console.WriteLine("Done creating first CSV.");
             Console.WriteLine("Creating second CSV.");
 
+            //Add header to csv
+            csv2 += "Values,Weights,Number of Items, Capacity,Value that Greedy Put in Bag," +
+                   "Value that DP Put in Bag,Greedy Solution,DP Solution,Error of Greedy\n";
+
             //Generating second CSV
             for (int i = 0; i < numberOfProblems; ++i)
             {
@@ -424,7 +460,7 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
                 record += $"{errorOfGreedy}\n";
 
                 //Add record to beggining of file
-                csv2 = csv2.Insert(0, record);
+                csv2 += record;
 
                 //So the user knows how much of the file has been generated
                 if ((i + 1) % 1000 == 0)
@@ -432,10 +468,6 @@ namespace KP_Alg_Greedy_v._KP_Alg_DP
                     Console.WriteLine($"{i + 1} records have been generated.");
                 }
             }
-
-            //Input header at begining of file
-            csv2 = csv2.Insert(0, "Values,Weights,Number of Items, Capacity,Value that Greedy Put in Bag," +
-                   "Value that DP Put in Bag,Greedy Solution,DP Solution,Error of Greedy\n");
 
             Console.WriteLine("Writing file.");
             File.WriteAllText(csv2Name, csv2);

@@ -1,0 +1,13 @@
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\GenerateFiles.deps.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\GenerateFiles.runtimeconfig.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\GenerateFiles.runtimeconfig.dev.json
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\GenerateFiles.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\GenerateFiles.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\bin\Release\netcoreapp2.0\KP Alg Greedy v. KP Alg DP.pdb
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\obj\Release\netcoreapp2.0\GenerateFiles.csprojResolveAssemblyReference.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\obj\Release\netcoreapp2.0\GenerateFiles.csproj.CoreCompileInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\obj\Release\netcoreapp2.0\GenerateFiles.AssemblyInfoInputs.cache
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\obj\Release\netcoreapp2.0\GenerateFiles.AssemblyInfo.cs
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\obj\Release\netcoreapp2.0\GenerateFiles.dll
+C:\Users\Fuck You Microsoft\Documents\GitHub\CIS405-PROJ\KP Alg Greedy v. KP Alg DP\GenerateFiles\obj\Release\netcoreapp2.0\GenerateFiles.pdb
