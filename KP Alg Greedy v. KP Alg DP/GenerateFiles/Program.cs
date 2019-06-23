@@ -7,7 +7,7 @@ namespace GenerateFiles
     {
         static void Main(string[] args)
         {
-            FileGeneratorV2.Generate(25, 38, 100, "PROBLEM_SIZE_6.txt");
+            FileGeneratorV2.Generate(100, 150, 40_000, "PROBLEM_SIZE_9.txt");
         }
     }
 }
